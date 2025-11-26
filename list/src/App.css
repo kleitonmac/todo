@@ -1,0 +1,242 @@
+body{
+  font-family: Arial, sans-serif ;
+  background-color: #f4f4f4;
+  padding: 20px;
+  color: #333;
+  background-image: url("./img/image.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto 100px;
+  background-color: #efefef;
+  padding: 15px 20px;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+input{
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  margin-left: 3px;
+  margin-right: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 3px;
+  background-color: #3d59f7;
+  color: #fff;
+  opacity: 0.8;
+  transition: 0.3s;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+button:hover {
+  opacity: 1;
+}
+
+.complete {
+  background-color: #5cb85c;
+}
+
+.remove {
+  background-color: #d9534f;
+}
+
+.todo-form {
+  padding-bottom: 1rem;
+}
+
+.todo-list {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #555;
+}
+
+.todo{
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.todo .content {
+  flex: 1;
+  min-width: 200px;
+}
+
+.todo .actions {
+  display: flex;
+  gap: 5px;
+}
+
+input, select {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.filter, .search{
+  border-bottom: 1px solid #555;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.filter-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-options div {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  .app {
+    margin: 0 auto 50px;
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 1.3rem;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+  }
+  
+  .todo {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .todo .content {
+    min-width: auto;
+    margin-bottom: 10px;
+  }
+  
+  .todo .actions {
+    justify-content: center;
+  }
+  
+  button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+  
+  .app {
+    padding: 12px;
+    margin: 0 auto 30px;
+  }
+  
+  h1 {
+    font-size: 1.2rem;
+  }
+  
+  h2 {
+    font-size: 1rem;
+  }
+  
+  .filter-options {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .filter-options div {
+    min-width: auto;
+  }
+  
+  .todo {
+    padding: 10px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    margin: 2px;
+  }
+  
+  input, select {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .app {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 1.1rem;
+  }
+  
+  .todo .actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  button {
+    width: 100%;
+    margin: 2px 0;
+  }
+}
+
+/* Melhorias para touch em dispositivos móveis */
+@media (hover: none) and (pointer: coarse) {
+  button {
+    padding: 12px 16px;
+    min-height: 44px; /* Tamanho mínimo para touch */
+  }
+  
+  input, select {
+    min-height: 44px; /* Tamanho mínimo para touch */
+    font-size: 16px; /* Previne zoom no iOS */
+  }
+}
