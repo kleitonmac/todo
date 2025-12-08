@@ -1,21 +1,48 @@
+import { TbFilter, TbListCheck, TbCheck, TbClock, TbSortAscending, TbSortDescending } from 'react-icons/tb';
 
-const Filter = ({filter, setFilter, setSort}) => {
+const Filter = ({filter = "All", setFilter, setSort, sort = "Asc"}) => {
+  if (!setFilter || !setSort) {
+    return null;
+  }
+  
   return (
     <div className="filter">
-        <h2>Filtrar por Categoria</h2>
-        <div className="filter-options"></div>
-        <div>
-            <p>Status:</p>
-            <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-                <option value="All">Todas</option>
-                <option value="completed">Completas</option>
-                <option value="incompleted">Incompletas</option>
-            </select>
-        </div>
-        <div>
-            <p>Ordem Alfabética:</p>
-            <button onClick={() => setSort("Asc")}>Asc</button>
-            <button onClick={() => setSort("Desc")}>Desc</button>
+        <h2>
+          <TbFilter className="icon" />
+          Filtros e Ordenação
+        </h2>
+        <div className="filter-options">
+            <div>
+                <p>Status:</p>
+                <select 
+                    value={filter || "All"} 
+                    onChange={(e) => setFilter(e.target.value)}
+                    aria-label="Filtrar por status"
+                >
+                    <option value="All"><TbListCheck /> Todas</option>
+                    <option value="completed"><TbCheck /> Completas</option>
+                    <option value="incompleted"><TbClock /> Incompletas</option>
+                </select>
+            </div>
+            <div>
+                <p>Ordenação:</p>
+                <div className="sort-buttons">
+                    <button 
+                        className={(sort || "Asc") === "Asc" ? "active" : ""}
+                        onClick={() => setSort("Asc")}
+                        aria-label="Ordenar A-Z"
+                    >
+                        <TbSortAscending /> A-Z
+                    </button>
+                    <button 
+                        className={(sort || "Asc") === "Desc" ? "active" : ""}
+                        onClick={() => setSort("Desc")}
+                        aria-label="Ordenar Z-A"
+                    >
+                        <TbSortDescending /> Z-A
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
   )
