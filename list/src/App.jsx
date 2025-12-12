@@ -126,7 +126,7 @@ function App() {
     // Formato: código do país + DDD + número (sem espaços, parênteses, hífens ou caracteres especiais)
     // Exemplo para Brasil: 5511999999999 (55 = código do país, 11 = DDD, 999999999 = número)
     // Exemplo para EUA: 15551234567 (1 = código do país, 5551234567 = número)
-    const phoneNumber = '5511999999999'; // 👈 SUBSTITUA AQUI pelo seu número
+    const phoneNumber = '5527981911375'; // 👈 SUBSTITUA AQUI pelo seu número
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     
     window.open(whatsappUrl, '_blank');
