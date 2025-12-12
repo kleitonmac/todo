@@ -506,7 +506,7 @@ function App() {
         )}
         {!apiAvailable && (
           <div style={{ marginTop: '10px', fontSize: '0.85rem', color: '#f59e0b' }}>
-            ⚠️ API desconectada - Usando apenas armazenamento local
+            
           </div>
         )}
       </div>
